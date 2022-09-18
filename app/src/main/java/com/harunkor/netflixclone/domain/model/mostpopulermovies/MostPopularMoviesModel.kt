@@ -1,6 +1,6 @@
 package com.harunkor.netflixclone.domain.model.mostpopulermovies
 
-data class MostPopulerMoviesModel(
+data class MostPopularMoviesModel(
     val errorMessage: String,
-    val items: List<MostPopulerMoviesItem>
+    val items: List<MostPopularMoviesItem>
 )

@@ -1,8 +1,7 @@
 package com.harunkor.netflixclone.data.remote
 
 import com.harunkor.netflixclone.domain.model.comingsoon.ComingSoonModel
-import com.harunkor.netflixclone.domain.model.mostpopulermovies.MostPopulerMoviesModel
-import com.harunkor.netflixclone.domain.model.mostpopulertv.MostPopulerTvItem
+import com.harunkor.netflixclone.domain.model.mostpopulermovies.MostPopularMoviesModel
 import com.harunkor.netflixclone.domain.model.mostpopulertv.MostPopulerTvModel
 import com.harunkor.netflixclone.domain.model.searchall.SearchAllModel
 import com.harunkor.netflixclone.domain.model.topmovies.TopMoviesModel
@@ -17,7 +16,7 @@ interface ApiService {
     fun getTopMovies(@Query("apiKey") apiKey:String): Call<TopMoviesModel>
 
     @GET("MostPopularMovies")
-    fun getMostPopulerMovies(@Query("apiKey") apiKey:String): Call<MostPopulerMoviesModel>
+    fun getMostPopulerMovies(@Query("apiKey") apiKey:String): Call<MostPopularMoviesModel>
 
     @GET("ComingSoon")
     fun getComingSoon(@Query("apiKey") apiKey:String): Call<ComingSoonModel>

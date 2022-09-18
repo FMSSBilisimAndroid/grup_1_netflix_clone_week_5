@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/drawable/ic_netflix_splash.xml" value="0.236" />
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/drawable/ic_netflix_splash_icon.xml" value="0.241" />
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/drawable/ic_netflix_splash_n_icon.xml" value="0.241" />
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/layout/activity_main.xml" value="0.55" />
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/layout/default_item_row.xml" value="0.33" />
+        <entry key="..\:/Users/ersin/FMSS/NetflixClone/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/ic_search_mic_icon.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable/search_list_item_background.xml" value="0.1985" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />

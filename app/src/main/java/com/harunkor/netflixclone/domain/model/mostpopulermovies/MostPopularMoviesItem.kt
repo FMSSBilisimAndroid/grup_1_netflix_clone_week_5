@@ -1,6 +1,6 @@
 package com.harunkor.netflixclone.domain.model.mostpopulermovies
 
-data class MostPopulerMoviesItem(
+data class MostPopularMoviesItem(
     val crew: String,
     val fullTitle: String,
     val id: String,
