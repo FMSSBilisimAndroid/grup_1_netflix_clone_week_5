@@ -22,7 +22,7 @@ class MostPopulerMoviesUseCase @Inject constructor(private val mostPopulerMovies
                 call: Call<MostPopularMoviesModel>,
                 response: Response<MostPopularMoviesModel>
             ) {
-              _mostPopulerMovies.value = response.body()
+                _mostPopulerMovies.value = response.body()
             }
 
             override fun onFailure(call: Call<MostPopularMoviesModel>, t: Throwable) {

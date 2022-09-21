@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.harunkor.netflixclone.R
-import com.harunkor.netflixclone.domain.model.mostpopulermovies.MostPopularMoviesItem
 import com.harunkor.netflixclone.domain.model.mostpopulermovies.MostPopularMoviesModel
 
 class MostPopularMoviesAdapter(
@@ -21,7 +20,8 @@ class MostPopularMoviesAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-            (holder as MostPopularMoviesAdapterViewHolder).MostPopulerMoviewAdapterBind(mostPopularMoviesModel.items[position])
+        (holder as MostPopularMoviesAdapterViewHolder).MostPopulerMoviewAdapterBind(
+            mostPopularMoviesModel.items[position])
     }
 
     override fun getItemCount(): Int {

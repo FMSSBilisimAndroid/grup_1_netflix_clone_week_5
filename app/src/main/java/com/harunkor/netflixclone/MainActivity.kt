@@ -5,6 +5,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.harunkor.netflixclone.databinding.ActivityMainBinding
 import com.harunkor.netflixclone.presentation.mostpopulertv.MostPopulerTvViewModel
 import com.harunkor.netflixclone.presentation.toptv.TopTvViewModel
@@ -15,7 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var bottomNavigationView: BottomNavigationView
     //private val topMoviesModel by viewModels<TopMoviesViewModel>()
     // private val mostPopulerMoviesModel by viewModels<MostPopulerMoviesViewModel>()
     // private val comingSoonViewModel by viewModels<ComingSoonViewModel>()
@@ -51,7 +54,16 @@ class MainActivity : AppCompatActivity() {
 /*        topTvViewModel.getTopTv().observe(this) {
             binding.responseText.text = it.items.get(0).toString()
         }*/
+        bottomNavSetup()
+    }
+
+    private fun bottomNavSetup(){
+        val navigationView = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
+        bottomNavigationView.setupWithNavController(navigationView.navController)
 
 
     }
+
+
 }

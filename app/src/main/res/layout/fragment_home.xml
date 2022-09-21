@@ -4,48 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-            <variable
-                name="mostPopulerMoviesAdapter"
-                type="com.harunkor.netflixclone.presentation.mostpopulermovies.adapter.MostPopularMoviesAdapter" />
+
+        <variable
+            name="mostPopulerMoviesAdapter"
+            type="com.harunkor.netflixclone.presentation.mostpopulermovies.adapter.MostPopularMoviesAdapter" />
+
+        <variable
+            name="topMoviesAdapter"
+            type="com.harunkor.netflixclone.presentation.topmovies.adapter.TopMoviesAdapter" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.ui.HomeFragment">
+        android:layout_height="match_parent">
 
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_netflix_splash_icon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/popular_on_netflix"
-            app:layout_constraintBottom_toTopOf="@+id/mostPopularMoviesRecyclerview"
-            app:layout_constraintStart_toStartOf="@+id/mostPopularMoviesRecyclerview" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mostPopularMoviesRecyclerview"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:adapter="@{mostPopulerMoviesAdapter}"
-            android:layout_height="170dp"
-            android:layout_marginTop="48dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
-            tools:listitem="@layout/default_item_row" />
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            tools:context=".presentation.ui.HomeFragment">
 
 
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_netflix_splash_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/popular_on_netflix"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/mostPopularMoviesRecyclerview"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mostPopularMoviesRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:adapter="@{mostPopulerMoviesAdapter}"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:listitem="@layout/default_item_row" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topMoviesRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:adapter="@{topMoviesAdapter}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                tools:listitem="@layout/item_top_movies" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/top_10_movies"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/topMoviesRecyclerview"
+                app:layout_constraintTop_toBottomOf="@+id/mostPopularMoviesRecyclerview" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/top_10_movies"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/topMoviesRecyclerview2"
+                app:layout_constraintTop_toBottomOf="@+id/topMoviesRecyclerview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topMoviesRecyclerview2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:adapter="@{topMoviesAdapter}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:listitem="@layout/item_top_movies" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/top_10_movies"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/mostPopularMoviesRecyclerview2"
+                app:layout_constraintTop_toBottomOf="@+id/topMoviesRecyclerview2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mostPopularMoviesRecyclerview2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:adapter="@{mostPopulerMoviesAdapter}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                tools:listitem="@layout/default_item_row" />
+
+            <ImageView
+                android:layout_width="338dp"
+                android:layout_height="174dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/netflix_coming_soon_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mostPopularMoviesRecyclerview2"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
